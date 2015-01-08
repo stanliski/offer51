@@ -13,6 +13,7 @@ public class WordSearch {
 	
 	public boolean exist(char[][] board, String word){		
 		if(word.length() == 0)
+<<<<<<< HEAD
 			return false;
 		int m = board.length;
 		int n = board[0].length;
@@ -31,12 +32,26 @@ public class WordSearch {
 					if(word.length() == 1 || dfs(board, i, j, word.substring(1), visited))
 						return true;
 					visited[i][j] = false;
+=======
+			return true;
+		int m = board.length;
+		int n = board[0].length;
+		boolean[][] visited = new boolean[m][n];
+		for(int i = 0; i < m; i++){
+			for(int j = 0; j < n; j++){
+				if(board[i][j] == word.charAt(0)){
+					if(word.length() == 1 || dfs(board, word))
+						return true;
+					else
+						return false;
+>>>>>>> e312dc24e6d263b8467bcdf5fe346016b4a4069e
 				}
 			}
 		}
 		return false;
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * 
 	 * @param board
@@ -67,4 +82,11 @@ public class WordSearch {
 		System.out.println(wordSearch.exist(board, "SEE"));
 	}
 	
+=======
+	public boolean dfs(char[][] board, String word){
+		
+		return false;
+	}
+	
+>>>>>>> e312dc24e6d263b8467bcdf5fe346016b4a4069e
 }
